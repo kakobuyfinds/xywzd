@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow">
+  <title>CSSBuy Spreadsheet | Product Finds, USD Prices &amp; QC Checklist</title>
+  <meta name="description" content="Browse CSSBuy spreadsheet finds from the CAFANS catalog. Filter shoes and clothing by estimated USD price, check sizing and QC photos, and budget for shipping.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CSSBuy Spreadsheet | Product Finds &amp; USD Prices">
+  <meta property="og:description" content="Compare CAFANS product finds by category and price, then check sizing, QC photos and parcel costs before ordering.">
+  <!-- index.html. Publish at the final HTTPS URL, add its self-referencing canonical, and submit that URL via Google Search Console URL Inspection and Bing Webmaster Tools URL Submission. Submission is pending the published URL. -->
+  <!-- Search references reviewed: https://cssbuy-spreadsheet.net/finds/, https://cssbuy.net/blog/best-cssbuy-spreadsheet-2026/, https://cssbuybuy.com/cssbuy-spreadsheet-curated-picks-comparisons/. This page pairs category and price filters with a downloadable shortlist, a category-specific QC checklist, and a parcel budget estimator. Product names and reference prices come from https://cafans.com/. -->
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172b21;
+      --quiet: #4d6256;
+      --line: #d4ded5;
+      --paper: #f5f7ef;
+      --white: #fff;
+      --green: #173f30;
+      --lime: #d9f58b;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.6 system-ui, sans-serif; }
+    a { color: inherit; text-underline-offset: .2em; }
+    :focus-visible { outline: 3px solid #427a9a; outline-offset: 4px; }
+    [hidden] { display: none !important; }
+    .wrap { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+    nav { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .75rem 2rem; padding-block: 1rem; font-weight: 650; }
+    nav div { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+    .hero { padding: clamp(3.5rem, 9vw, 7rem) 1rem; border-radius: 1.5rem; text-align: center; color: white; background: radial-gradient(ellipse at top right, #416751, var(--green) 63%); }
+    h1, h2 { font-family: Georgia, serif; font-weight: 500; line-height: 1.04; letter-spacing: -.04em; }
+    h1 { margin: 0; font-size: clamp(2.7rem, 8vw, 6rem); }
+    h2 { margin: 0 0 .7rem; font-size: clamp(2rem, 4vw, 3.2rem); }
+    h3 { margin: .2rem 0; font-size: 1.05rem; }
+    .hero p { max-width: 43ch; margin: 1.2rem auto 1.6rem; color: #edf3e8; }
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+    .button, button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid transparent; border-radius: .6rem; padding: .55rem 1rem; background: var(--green); color: white; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+    .hero .button { background: var(--lime); color: var(--ink); }
+    .hero .secondary { background: transparent; border-color: #b5c7b7; color: white; }
+    section { margin-block: clamp(2.75rem, 6vw, 5rem); scroll-margin-top: 1rem; }
+    .intro, .meta, .notice { color: var(--quiet); }
+    .intro { max-width: 68ch; }
+    .panel, .product { border: 1px solid var(--line); border-radius: 1rem; background: var(--white); }
+    .panel { padding: clamp(1rem, 3vw, 1.6rem); }
+    .controls, .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: .8rem; align-items: end; }
+    .controls { margin: 1rem 0; }
+    label { display: grid; gap: .25rem; font-weight: 650; }
+    input, select { width: 100%; min-height: 44px; padding: .5rem .7rem; border: 1px solid #aabbb0; border-radius: .55rem; background: white; color: var(--ink); font: inherit; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: .8rem; list-style: none; padding: 0; }
+    .product { padding: 1rem; border-top: 4px solid #a9c9a6; display: flex; flex-direction: column; }
+    .product .meta { margin: 0; font-size: .88rem; }
+    .product strong { display: block; margin: .25rem 0 .55rem; font-size: 1.25rem; }
+    .product a { margin-top: auto; font-weight: 650; }
+    .guide { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: .8rem; }
+    .guide p { margin-bottom: 0; }
+    .total { margin-bottom: 0; font-size: 1.1rem; font-weight: 700; }
+    details { border-bottom: 1px solid var(--line); padding-block: .85rem; }
+    summary { font-weight: 700; cursor: pointer; }
+    details p { max-width: 72ch; margin-bottom: .15rem; }
+    footer { border-top: 1px solid var(--line); padding-block: 1.25rem; color: var(--quiet); font-size: .92rem; }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "CSSBuy Spreadsheet",
+      "inLanguage": "en",
+      "description": "A filterable product shortlist from CAFANS with estimated USD prices, a quality control checklist and a parcel budget estimator.",
+      "about": {"@type": "Thing", "name": "CSSBuy spreadsheet"}
+    }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/xywzd/">
+</head>
+<body>
+  <div class="wrap">
+    <nav aria-label="Page navigation">
+      <a href="#main">CSSBuy shopping guide</a>
+      <div><a href="#catalog">Catalog</a><a href="#checklist">QC checklist</a><a href="#budget">Parcel budget</a></div>
+    </nav>
+    <main id="main">
+      <header class="hero">
+        <h1>CSSBuy spreadsheet</h1>
+        <p>Compare shoes and clothing from CAFANS, build a shortlist, and budget for the parcel before you order.</p>
+        <div class="actions">
+          <a class="button" href="https://cafans.com/">CSSBuy spreadsheet</a>
+          <a class="button secondary" href="https://cafans.com/">Buy it now</a>
+        </div>
+      </header>
+
+      <section id="catalog" aria-labelledby="catalog-heading">
+        <h2 id="catalog-heading">Browse product finds</h2>
+        <p class="intro">These listings come from <a href="https://cafans.com/">CAFANS</a>. USD prices are estimates. Open the product page to check the current price, available variants and source listing.</p>
+        <div class="panel controls" id="catalog-controls" hidden>
+          <label>Search products <input id="query" type="search" placeholder="Try slides or jacket"></label>
+          <label>Category
+            <select id="category">
+              <option value="">All categories</option>
+              <option>Shoes</option><option>Hoodies &amp; sweatshirts</option><option>T-shirts</option><option>Jackets</option>
+            </select>
+          </label>
+          <label>Maximum USD price <input id="max-price" type="number" min="0" step="0.01" placeholder="Any price"></label>
+          <button id="download" type="button">Download results as CSV</button>
+        </div>
+        <p class="notice" id="count" role="status" hidden></p>
+        <ul class="grid" id="products">
+          <li class="product" data-category="Shoes" data-price="62.36">
+            <p class="meta">Shoes</p><h3>Leather Slides</h3><strong>$62.36 USD</strong>
+            <a href="https://cafans.com/goods-158791.html" aria-label="View Leather Slides on CAFANS">View on CAFANS</a>
+          </li>
+          <li class="product" data-category="Shoes" data-price="46.67">
+            <p class="meta">Shoes</p><h3>Platform Slides</h3><strong>$46.67 USD</strong>
+            <a href="https://cafans.com/goods-158790.html" aria-label="View Platform Slides on CAFANS">View on CAFANS</a>
+          </li>
+          <li class="product" data-category="Shoes" data-price="66.50">
+            <p class="meta">Shoes</p><h3>Heels</h3><strong>$66.50 USD</strong>
+            <a href="https://cafans.com/goods-158789.html" aria-label="View Heels on CAFANS">View on CAFANS</a>
+          </li>
+          <li class="product" data-category="Hoodies &amp; sweatshirts" data-price="27.50">
+            <p class="meta">Hoodies &amp; sweatshirts</p><h3>Sweatshirt</h3><strong>$27.50 USD</strong>
+            <a href="https://cafans.com/goods-158792.html" aria-label="View Sweatshirt on CAFANS">View on CAFANS</a>
+          </li>
+          <li class="product" data-category="T-shirts" data-price="32.64">
+            <p class="meta">T-shirts</p><h3>Unisex Embroidered Oversized T-Shirt</h3><strong>$32.64 USD</strong>
+            <a href="https://cafans.com/goods-158200.html" aria-label="View Unisex Embroidered Oversized T-Shirt on CAFANS">View on CAFANS</a>
+          </li>
+          <li class="product" data-category="T-shirts" data-price="29.72">
+            <p class="meta">T-shirts</p><h3>Unisex T-Shirt</h3><strong>$29.72 USD</strong>
+            <a href="https://cafans.com/goods-158110.html" aria-label="View Unisex T-Shirt on CAFANS">View on CAFANS</a>
+          </li>
+          <li class="product" data-category="Jackets" data-price="84.54">
+            <p class="meta">Jackets</p><h3>Jacket</h3><strong>$84.54 USD</strong>
+            <a href="https://cafans.com/goods-158222.html" aria-label="View Jacket on CAFANS">View on CAFANS</a>
+          </li>
+          <li class="product" data-category="Jackets" data-price="27.50">
+            <p class="meta">Jackets</p><h3>Jacket - 0608260</h3><strong>$27.50 USD</strong>
+            <a href="https://cafans.com/goods-158158.html" aria-label="View Jacket 0608260 on CAFANS">View on CAFANS</a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="checklist" aria-labelledby="checklist-heading">
+        <h2 id="checklist-heading">From product link to QC photos</h2>
+        <div class="guide">
+          <article class="panel">
+            <h3>Save the exact variant</h3>
+            <p>Open the CAFANS detail page and find the original marketplace URL. If CSSBuy accepts that listing, record the selected color, size and seller price before ordering.</p>
+          </article>
+          <article class="panel">
+            <h3>Check measurements and photos</h3>
+            <p>For shoes, compare the size label, insole length and both soles. For clothing, compare the size tag, chest width and garment length with a piece you already own. Confirm whether the seller measures flat or around the garment.</p>
+          </article>
+          <article class="panel">
+            <h3>Compare parcel quotes</h3>
+            <p>Use the same destination and packed dimensions for each quote. Check how each route calculates billable weight, then confirm what the quote includes before choosing a route.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="budget" aria-labelledby="budget-heading">
+        <h2 id="budget-heading">Estimate your parcel total</h2>
+        <p class="intro">Enter amounts in USD using your listing and shipping quotes. Include local delivery, agent fees or estimated taxes in the third field if they apply and are billed separately.</p>
+        <form class="panel" id="budget-form" hidden>
+          <div class="fields">
+            <label>Items (USD) <input id="items" type="number" min="0" step="0.01" inputmode="decimal"></label>
+            <label>International shipping (USD) <input id="shipping" type="number" min="0" step="0.01" inputmode="decimal"></label>
+            <label>Other quoted costs (USD) <input id="fees" type="number" min="0" step="0.01" inputmode="decimal"></label>
+          </div>
+          <p class="total"><output id="total" for="items shipping fees" aria-live="polite">Estimated total: $0.00 USD</output></p>
+        </form>
+        <noscript><p>Add the item subtotal, international shipping and any other quoted costs to estimate the parcel total.</p></noscript>
+      </section>
+
+      <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading">CSSBuy spreadsheet FAQ</h2>
+        <details>
+          <summary>What is a CSSBuy spreadsheet?</summary>
+          <p>It is a shopping shortlist used to compare product links, categories and reference prices before placing an order through a shopping agent. This independent guide uses CAFANS listings as its catalog source.</p>
+        </details>
+        <details>
+          <summary>What should I do if a listing has changed?</summary>
+          <p>Check the current seller, available variants and price on the source listing. If the link is unavailable, remove that row from your shortlist or find a listing you can verify.</p>
+        </details>
+        <details>
+          <summary>Can I open the results in Excel or Google Sheets?</summary>
+          <p>Yes. Filter the catalog and use the CSV button to export the visible products. The file includes each title, category, reference USD price and CAFANS product link.</p>
+        </details>
+      </section>
+    </main>
+    <footer>Independent CSSBuy shopping guide. Catalog source: <a href="https://cafans.com/">CAFANS</a>.</footer>
+  </div>
+  <script>
+    const query = document.getElementById('query');
+    const category = document.getElementById('category');
+    const maxPrice = document.getElementById('max-price');
+    const count = document.getElementById('count');
+    const download = document.getElementById('download');
+    const products = Array.from(document.querySelectorAll('#products .product')).map(card => ({
+      card,
+      title: card.querySelector('h3').textContent,
+      category: card.dataset.category,
+      price: card.dataset.price,
+      url: card.querySelector('a').href
+    }));
+
+    function filterProducts() {
+      if (!maxPrice.validity.valid) {
+        count.textContent = 'Enter a valid maximum price in USD.';
+        download.disabled = true;
+        return;
+      }
+
+      const words = query.value.trim().toLowerCase().split(/\s+/);
+      const limit = maxPrice.value === '' ? Infinity : maxPrice.valueAsNumber;
+      let visible = 0;
+
+      for (const product of products) {
+        const searchable = `${product.title} ${product.category}`.toLowerCase();
+        const matches = words.every(word => searchable.includes(word)) &&
+          (category.value === '' || product.category === category.value) &&
+          Number(product.price) <= limit;
+        product.card.hidden = !matches;
+        if (matches) visible += 1;
+      }
+
+      count.textContent = visible
+        ? `${visible} of ${products.length} products`
+        : 'No products match. Try another category, search term or price.';
+      download.disabled = visible === 0;
+    }
+
+    function csvCell(value) {
+      return `"${value.replaceAll('"', '""')}"`;
+    }
+
+    download.addEventListener('click', () => {
+      const rows = [['Product', 'Category', 'Estimated USD price', 'CAFANS URL']];
+      for (const product of products) {
+        if (!product.card.hidden) rows.push([product.title, product.category, product.price, product.url]);
+      }
+      const csv = rows.map(row => row.map(csvCell).join(',')).join('\r\n');
+      const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'cssbuy-spreadsheet.csv';
+      document.body.append(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+
+    for (const input of [query, category, maxPrice]) input.addEventListener('input', filterProducts);
+    document.getElementById('catalog-controls').hidden = false;
+    count.hidden = false;
+    filterProducts();
+
+    const budgetForm = document.getElementById('budget-form');
+    const amounts = Array.from(budgetForm.querySelectorAll('input'));
+    const total = document.getElementById('total');
+    const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+
+    budgetForm.addEventListener('submit', event => event.preventDefault());
+    budgetForm.addEventListener('input', () => {
+      if (amounts.some(input => !input.validity.valid)) {
+        total.textContent = 'Enter valid nonnegative USD amounts.';
+        return;
+      }
+      const cents = amounts.reduce((sum, input) => sum + Math.round(Number(input.value) * 100), 0);
+      total.textContent = `Estimated total: ${currency.format(cents / 100)} USD`;
+    });
+    budgetForm.hidden = false;
+  </script>
+</body>
+</html>
